@@ -1,0 +1,57 @@
+# 飞书配置
+feishu:
+  webhook_url: "https://open.feishu.cn/open-apis/bot/v2/hook/xxxxx"
+  secret: ""  # 可选，用于签名验证
+  at_users: []  # 需要@的用户手机号列表
+
+# 门店配置
+stores:
+  - name: "测试门店1"
+    dianping_id: "xxxxx"
+    douyin_id: "xxxxx"
+    gaode_id: "xxxxx"
+    meituan_id: "xxxxx"
+    eleme_id: "xxxxx"
+    jd_id: "xxxxx"
+
+# 抓取配置
+scraping:
+  dianping:
+    enabled: true
+    interval_hours: 2
+    start_time: "10:00"
+    end_time: "20:00"
+    retry_count: 3
+    delay_min: 3
+    delay_max: 8
+  
+  douyin:
+    enabled: true
+    interval_hours: 2
+    start_time: "10:00"
+    end_time: "20:00"
+  
+  gaode:
+    enabled: true
+    interval_hours: 2
+    start_time: "10:00"
+    end_time: "20:00"
+  
+  delivery:
+    enabled: true
+    interval_minutes: 30
+    lunch_start: "10:30"
+    lunch_end: "12:30"
+    dinner_start: "17:00"
+    dinner_end: "19:00"
+    platforms:
+      - meituan
+      - eleme
+      - jd
+
+# 日志配置
+logging:
+  level: INFO
+  file: logs/monitor.log
+  max_size: 10MB
+  backup_count: 5
